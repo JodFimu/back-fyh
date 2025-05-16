@@ -11,7 +11,6 @@ import reservationRoutes from "../src/reservation/reservation.routes.js";
 import authRoutes from "../src/auth/auth.routes.js";
 import userRoutes from "../src/user/user.routes.js";
 import hotelRoutes from "../src/hotel/hotel.routes.js";
-import authRoutes from "../src/auth/auth.routes.js";
 import roomRoutes from "../src/room/room.routes.js";
 
 const middlewares = (app) => {

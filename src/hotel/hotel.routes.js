@@ -9,7 +9,7 @@ const router = Router();
 /**
  * @swagger
  * tags:
- *   name: Hotels
+ *   name: Hotel
  *   description: API for managing hotels
  * components:
  *   securitySchemes:
@@ -18,7 +18,6 @@ const router = Router();
  *       scheme: bearer
  *       bearerFormat: JWT
  */
-
 /**
  * @swagger
  * /hotels/createHotel:

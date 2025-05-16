@@ -8,7 +8,7 @@ import { userExists, isClient } from "../helpers/db-validator.js"
 
 export const createHotelValidator = [
     validateJWT,
-    hasRoles("HOST_ROLE", "ADMIN_ROLE"),
+    hasRoles("ADMIN_ROLE"),
     body("name").notEmpty().withMessage("Hotel name is required")
                 .isLength({ max: 50 }).withMessage("Hotel name must be at most 50 characters"),
     body("description").notEmpty().withMessage("Description is required")
