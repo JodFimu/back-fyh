@@ -7,11 +7,13 @@ import morgan from "morgan";
 import { dbConnection } from "./mongo.js";
 import { swaggerDocs, swaggerUi } from "./swagger.js";
 import  apiLimiter from "../src/middlewares/rate-limit-validator.js";
+import reservationRoutes from "../src/reservation/reservation.routes.js";
 import authRoutes from "../src/auth/auth.routes.js";
 import userRoutes from "../src/user/user.routes.js";
 import hotelRoutes from "../src/hotel/hotel.routes.js";
 import authRoutes from "../src/auth/auth.routes.js";
 import roomRoutes from "../src/room/room.routes.js";
+
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
@@ -23,6 +25,7 @@ const middlewares = (app) => {
 
 const routes = (app) => {
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+    app.use("/FYPH/v1/reservations", reservationRoutes);
     app.use("/FYPH/v1/auth", authRoutes);
     app.use("/FYPH/v1/users", userRoutes);
     app.use("/FYPH/v1/hotels", hotelRoutes);
