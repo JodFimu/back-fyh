@@ -1,4 +1,5 @@
 import User from "../user/user.model.js";
+import Resevervation from "../reservation/reservation.model.js"
 
 export const emailExists = async (email = "") => {
     const existe = await User.findOne({email})
@@ -36,5 +37,12 @@ export const isAdmin = async (uid = " ") =>{
 
     if(existe.role !== "ADMIN_ROLE" ){
         throw new Error("Is not a admin")
+    }
+}
+
+export const reservationExists = async (id = "")=>{
+    const existe = await Resevervation.findById(id)
+    if(existe){
+        throw new Error("Reservation does not exists")
     }
 }
