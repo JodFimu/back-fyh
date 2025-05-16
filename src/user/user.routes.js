@@ -19,7 +19,7 @@ const router = Router();
 
 /**
  * @swagger
- * /findUser/{uid}:
+ * /users/findUser/{uid}:
  *   get:
  *     summary: Get a user by ID
  *     tags: [Users]
@@ -40,7 +40,7 @@ router.get("/findUser/:uid", getUserByIdValidator, getUserById);
 
 /**
  * @swagger
- * /:
+ * /users/:
  *   get:
  *     summary: Get all users
  *     tags: [Users]
@@ -52,7 +52,7 @@ router.get("/", getUserValidation, getUsers);
 
 /**
  * @swagger
- * /deleteUserAdmin/{uid}:
+ * /users/deleteUserAdmin/{uid}:
  *   delete:
  *     summary: Delete a user by admin
  *     tags: [Users]
@@ -73,7 +73,7 @@ router.delete("/deleteUserAdmin/:uid", deleteUserValidatorAdmin, deleteUserAdmin
 
 /**
  * @swagger
- * /deleteUserClient:
+ * /users/deleteUserClient:
  *   delete:
  *     summary: Delete a user by client
  *     tags: [Users]
@@ -87,7 +87,7 @@ router.delete("/deleteUserClient", deleteUserValidatorClient, deleteUserClient);
 
 /**
  * @swagger
- * /updatePassword:
+ * /users/updatePassword:
  *   patch:
  *     summary: Update user password
  *     tags: [Users]
@@ -113,7 +113,7 @@ router.patch("/updatePassword", updatePasswordValidator, updatePassword);
 
 /**
  * @swagger
- * /updateUser:
+ * /users/updateUser:
  *   put:
  *     summary: Update user information
  *     tags: [Users]
@@ -138,7 +138,7 @@ router.put("/updateUser", deleteUserValidatorClient, updateUserUser);
 
 /**
  * @swagger
- * /updateUserAdmin/{uid}:
+ * /users/updateUserAdmin/{uid}:
  *   put:
  *     summary: Update user information by admin
  *     tags: [Users]
@@ -170,7 +170,7 @@ router.put("/updateUserAdmin/:uid", deleteUserValidatorAdmin, updateUserAdmin);
 
 /**
  * @swagger
- * /createUser:
+ * /users/createUser:
  *   post:
  *     summary: Create a new user
  *     tags: [Users]
@@ -197,7 +197,7 @@ router.post("/createUser", uploadProfilePicture.single("profilePicture"), cloudi
 
 /**
  * @swagger
- * /updateRole/{uid}:
+ * /users/updateRole/{uid}:
  *   patch:
  *     summary: Update user role
  *     tags: [Users]
@@ -228,7 +228,7 @@ router.patch("/updateRole/:uid", updateRoleValidator, updateRole);
 
 /**
  * @swagger
- * /updateProfilePicture:
+ * /users/updateProfilePicture:
  *   patch:
  *     summary: Update the profile picture of the user
  *     tags: [Users]

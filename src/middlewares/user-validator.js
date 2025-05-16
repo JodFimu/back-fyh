@@ -41,7 +41,7 @@ export const validatorLogin = [
 ]
 
 export const validateUpdateRole = [
-    param("id").isMongoId().withMessage("The id is not valid"),
+    param("uid").isMongoId().withMessage("The id is not valid"),
     body("role").notEmpty().withMessage("The role is required"),
     body("role").isIn(["ADMIN_ROLE", "CLIENT_ROLE", "HOST_ROLE"]).withMessage("The role is not valid"),
     validateField,

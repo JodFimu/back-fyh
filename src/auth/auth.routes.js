@@ -8,6 +8,12 @@ const router = Router();
 
 /**
  * @swagger
+ * tags:
+ *   name: Auth
+ *   description: API for managing authentication
+ */
+/**
+ * @swagger
  * /auth/register:
  *   post:
  *     summary: Register a new user
