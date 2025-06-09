@@ -1,8 +1,8 @@
 import { Router } from "express";
 import { getUserById, getUsers, deleteUserAdmin, updatePassword, updateUserUser, updateUserAdmin, updateRole, 
-    deleteUserClient, updateProfilePicture } from "./user.controller.js";
+    deleteUserClient, updateProfilePicture, getUserReservations, getUserLogged} from "./user.controller.js";
 import { getUserByIdValidator, updatePasswordValidator, deleteUserValidatorClient, deleteUserValidatorAdmin, 
-    createUserValidation, updateRoleValidator, getUserValidation, updateProfilePictureValidator } from "../middlewares/user-validator.js";
+    createUserValidation, updateRoleValidator, getUserValidation, updateProfilePictureValidator, getUserReservationsValidator, getRoleValidator } from "../middlewares/user-validator.js";
 import { register } from "../auth/auth.controller.js";
 import { uploadProfilePicture } from "../middlewares/multer-uploads.js";
 import { cloudinaryUploadMiddleware } from "../middlewares/img-uploads.js";
@@ -252,6 +252,26 @@ router.patch("/updateRole/:uid", updateRoleValidator, updateRole);
  *         description: Server error
  */
 router.patch("/updateProfilePicture", uploadProfilePicture.single("img"), cloudinaryUploadMiddleware("profile-img"), updateProfilePictureValidator, updateProfilePicture )
+
+/**
+ * @swagger
+ * /users/getReservations:
+ *   get:
+ *     summary: Obtener el historial de reservaciones del usuario autenticado
+ *     tags: [Users]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Lista de reservaciones del usuario
+ *       401:
+ *         description: No autorizado o token inválido
+ *       500:
+ *         description: Error del servidor
+ */
+router.get("/getReservations", getUserReservationsValidator, getUserReservations);
+
+router.get("/getUser", getRoleValidator, getUserLogged)
 
 export default router;
 

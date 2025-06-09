@@ -40,9 +40,10 @@ export const isAdmin = async (uid = " ") =>{
     }
 }
 
-export const reservationExists = async (id = "")=>{
-    const existe = await Resevervation.findById(id)
-    if(existe){
+export const reservationExists = async (rid = "")=>{
+    const existe = await Resevervation.findById(rid)
+    console.log(existe)
+    if(!existe){
         throw new Error("Reservation does not exists")
     }
 }

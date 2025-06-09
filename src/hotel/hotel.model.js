@@ -32,65 +32,52 @@ const hotelSchema = Schema({
         maxLength: [8, "Telephone cannot exceed 8 characters"]
     },
     services: {
-    type: [
-        {
-            type: {
-                type: String,
-                required: [true, "Service is required"],
-                enum: [
-                    "Hotel",
-                    "Singleroom",
-                    "Doubleroom",
-                    "Suite",
-                    "Deluxeroom",
-                    "Event"
-                ]
-            },
-            price: {
-                type: Number,
-                required: [true, "Price is required"],
-                min: [0, "Price cannot be negative"]
+        type: [
+            {
+                type: {
+                    type: String,
+                    required: [true, "Service is required"],
+                    enum: [
+                        "Hotel",
+                        "Singleroom",
+                        "Doubleroom",
+                        "Suite",
+                        "Deluxeroom",
+                        "Event"
+                    ]
+                },
+                description: {
+                    type: String,
+                    required: [true, "Description is required"],
+                    maxLength: [100, "Description cannot exceed 100 characters"]
+                },
+                price: {
+                    type: Number,
+                    required: [true, "Price is required"],
+                    min: [0, "Price cannot be negative"]
+                }
             }
+        ],
+        validate: {
+            validator: function (arr) {
+                return arr.length > 0;
+            },
+            message: "At least one service must be specified"
         }
-    ],
-    validate: {
-        validator: function (arr) {
-            return arr.length > 0;
-        },
-        message: "At least one service must be specified"
-    }
-}
-,
+    },
     host: {
-            type: Schema.Types.ObjectId,
-            ref: "User"    
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: [true, "Host is required"],
     },
-    ratings: [{
-        user: {
-            type: Schema.Types.ObjectId,
-            ref: "User",
-            required: true
-        },
-        rating: {
-            type: Number,
-            required: true,
-            min: 1,
-            max: 5
-        },
-        comment: {
-            type: String,
-            maxLength: 300
-        },
-        date: {
-            type: Date,
-            default: () => new Date(new Date().setHours(0, 0, 0, 0)),
-            set: (value) => new Date(new Date(value).setHours(0, 0, 0, 0))
-        }
+    reservations: [{
+        type: Schema.Types.ObjectId,
+        ref: "Reservation"
     }],
-    averageRating: {
-        type: Number,
-        default: 0
-    },
+    rooms: [{
+        type: Schema.Types.ObjectId,
+        ref: "Room"
+    }],
     status: {
         type: Boolean,
         default: true
@@ -102,17 +89,9 @@ const hotelSchema = Schema({
 });
 
 hotelSchema.methods.toJSON = function () {
-    const { __v, _id, ratings, ...hotel } = this.toObject();
+    const { __v, _id, ...hotel } = this.toObject();
     hotel.hid = _id;
-
-    if (ratings && ratings.length > 0) {
-        const sum = ratings.reduce((acc, item) => acc + item.rating, 0);
-        hotel.averageRating = parseFloat((sum / ratings.length).toFixed(1));
-    } else {
-        hotel.averageRating = 0;
-    }
     return hotel;
 };
-
 
 export default model("Hotel", hotelSchema);

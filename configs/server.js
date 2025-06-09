@@ -12,11 +12,22 @@ import authRoutes from "../src/auth/auth.routes.js";
 import userRoutes from "../src/user/user.routes.js";
 import hotelRoutes from "../src/hotel/hotel.routes.js";
 import roomRoutes from "../src/room/room.routes.js";
+import eventRoutes from "../src/event/event.routes.js";
+import createDefaultAdmin from "./default-data.js";
+import billRoutes from "../src/bill/bill.routes.js"
+import reportRoutes from "../src/report/report.routes.js";
+import startReservationStatusJob  from "./reservationStatus.js"
 
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
-    app.use(cors());
+    app.use(cors({
+    origin: 'http://localhost:5173',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+}));
+
     app.use(helmet());
     app.use(morgan("dev"));
     app.use(apiLimiter);
@@ -29,11 +40,16 @@ const routes = (app) => {
     app.use("/FYPH/v1/users", userRoutes);
     app.use("/FYPH/v1/hotels", hotelRoutes);
     app.use("/FYPH/v1/rooms", roomRoutes);
+    app.use("/FYPH/v1/events", eventRoutes);
+    app.use("/FYPH/v1/bills", billRoutes)
+    app.use("/FYPH/v1/reports", reportRoutes);
 }
 
 const conectarDB = async () => {
     try {
         await dbConnection();
+        await createDefaultAdmin();
+        await startReservationStatusJob();
     } catch (err) {
         console.log(`Database connection failed: ${err}`);
         process.exit(1);

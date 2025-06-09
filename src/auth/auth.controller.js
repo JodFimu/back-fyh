@@ -13,11 +13,15 @@ export const register = async (req, res) => {
 
         const user = await User.create(data);
 
+        const webToken = await generateJWT(user.id)
         return res.status(201).json({
             message: "You have successfully registered",
             success: true,
-            name: user.name,
-            email: user.email
+            userDetails: {
+                email: user.email,
+                img: user.profilePicture,
+                token: webToken
+            }
         });
     } catch (err) {
         return res.status(500).json({
@@ -56,7 +60,8 @@ export const login = async (req, res) => {
             success: true,
             message: "login successful",
             userDetails: {
-                role: `Successfully logged`,
+                email: acces.email,
+                img: acces.profilePicture,
                 token: webToken
             }
         })

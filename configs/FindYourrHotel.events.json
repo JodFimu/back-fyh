@@ -1,0 +1,100 @@
+[{
+  "_id": {
+    "$oid": "6832de94dbe4a6d96c86a397"
+  },
+  "images": [
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748164244/events-img/hoteL-los_picos_bucerias-1748164243449.jpg"
+  ],
+  "name": "Boda en la Playa",
+  "description": "Una boda inolvidable frente al mar.",
+  "date": {
+    "$date": "2025-07-15T00:00:00.000Z"
+  },
+  "time": "18:00",
+  "location": "Hotel Paraíso, Cancún",
+  "category": "weding",
+  "status": true,
+  "hotel": {
+    "$oid": "6832c235d14ddb5a0ba51e0b"
+  },
+  "cost": 20000,
+  "adminEvent": {
+    "$oid": "6832db9613883dddb4e85dba"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6832df78dbe4a6d96c86a39a"
+  },
+  "images": [
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748164472/events-img/hoteL-los_picos_bucerias-1748164471381.jpg"
+  ],
+  "name": "Conferencia Empresarial",
+  "description": "Evento para networking y negocios.",
+  "date": {
+    "$date": "2025-08-10T00:00:00.000Z"
+  },
+  "time": "09:00",
+  "location": "Hotel Ejecutivo, Monterrey",
+  "category": "business",
+  "status": true,
+  "hotel": {
+    "$oid": "6832d83b13883dddb4e85d9a"
+  },
+  "cost": 5000,
+  "adminEvent": {
+    "$oid": "6832db9613883dddb4e85dba"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6832dfe6dbe4a6d96c86a39d"
+  },
+  "images": [
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748164582/events-img/hotel-ejemplo-1748164581666.jpg"
+  ],
+  "name": "Fiesta de Cumpleaños",
+  "description": "Celebración privada con DJ y barra libre.",
+  "date": {
+    "$date": "2025-09-05T00:00:00.000Z"
+  },
+  "time": "20:00",
+  "location": "Hotel Central, CDMX",
+  "category": "party",
+  "status": true,
+  "hotel": {
+    "$oid": "6832d8e113883dddb4e85da1"
+  },
+  "cost": 8000,
+  "adminEvent": {
+    "$oid": "6832db9613883dddb4e85dba"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6832e03cdbe4a6d96c86a3a0"
+  },
+  "images": [
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748164668/events-img/hoteL-los_picos_bucerias-1748164667871.jpg"
+  ],
+  "name": "Reunión Familiar",
+  "description": "Evento para toda la familia con actividades recreativas.",
+  "date": {
+    "$date": "2025-12-20T00:00:00.000Z"
+  },
+  "time": "12:00",
+  "location": "Hotel Montaña, Valle de Bravo",
+  "category": "other",
+  "status": true,
+  "hotel": {
+    "$oid": "6832c235d14ddb5a0ba51e0b"
+  },
+  "cost": 3000,
+  "adminEvent": {
+    "$oid": "6832db9613883dddb4e85dba"
+  },
+  "__v": 0
+}]

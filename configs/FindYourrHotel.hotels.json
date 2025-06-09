@@ -1,0 +1,166 @@
+[{
+  "_id": {
+    "$oid": "6832c235d14ddb5a0ba51e0b"
+  },
+  "name": "h1",
+  "description": "h2",
+  "address": "h3",
+  "images": [
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748156981/hotels-img/hoteL-los_picos_bucerias-1748156980356.jpg"
+  ],
+  "telephone": "12345678",
+  "services": [
+    {
+      "type": "Singleroom",
+      "description": "Habitación individual con cama sencilla y baño privado.",
+      "price": 50,
+      "_id": {
+        "$oid": "6832c235d14ddb5a0ba51e0c"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "683111e74c420ecad5953f5d"
+  },
+  "reservations": [],
+  "rooms": [],
+  "averageRating": 0,
+  "status": true,
+  "ratings": [],
+  "createdAt": {
+    "$date": "2025-05-25T07:09:41.242Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-25T07:09:41.242Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6832d6f813883dddb4e85d90"
+  },
+  "name": "Hotel el paraíso ",
+  "description": "Conecta con la naturaleza en nuestro hotel con cabañas y pscinas naturales",
+  "address": "12 av zona 1 ",
+  "images": [
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748162294/hotels-img/b6aa915a8af1139561f0b9ec24a2e5af-1748162294020.jpg",
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748162295/hotels-img/landscape-2016308_1280-1748162294021.jpg",
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748162296/hotels-img/hotel-ejemplo-1748162294025.jpg"
+  ],
+  "telephone": "123456",
+  "services": [
+    {
+      "type": "Suite",
+      "description": "Habitación individual con cama sencilla y baño privado.",
+      "price": 50,
+      "_id": {
+        "$oid": "6832d6f813883dddb4e85d91"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "683111e74c420ecad5953f5d"
+  },
+  "reservations": [
+    {
+      "$oid": "6832dbaa13883dddb4e85dbf"
+    },
+    {
+      "$oid": "6832dbd213883dddb4e85dc7"
+    },
+    {
+      "$oid": "6832dbe213883dddb4e85dcf"
+    },
+    {
+      "$oid": "6832dbf613883dddb4e85dd7"
+    },
+    {
+      "$oid": "6832dc0813883dddb4e85ddf"
+    }
+  ],
+  "rooms": [],
+  "averageRating": 0,
+  "status": true,
+  "ratings": [],
+  "createdAt": {
+    "$date": "2025-05-25T08:38:16.741Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-25T08:59:52.703Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6832d83b13883dddb4e85d9a"
+  },
+  "name": "Hotel EL cariñito ",
+  "description": "Quieres pasar unas vacaciones memorables al lado de tu pareja pues este es el lugar ideal",
+  "address": "12 av zona 1 ",
+  "images": [
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748162617/hotels-img/b6aa915a8af1139561f0b9ec24a2e5af-1748162617521.jpg",
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748162618/hotels-img/landscape-2016308_1280-1748162617522.jpg",
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748162619/hotels-img/hotel-ejemplo-1748162617525.jpg"
+  ],
+  "telephone": "123456",
+  "services": [
+    {
+      "type": "Doubleroom",
+      "description": "Habitación individual con cama sencilla y baño privado.",
+      "price": 500,
+      "_id": {
+        "$oid": "6832d83b13883dddb4e85d9b"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "683111e74c420ecad5953f5d"
+  },
+  "reservations": [],
+  "rooms": [],
+  "averageRating": 0,
+  "status": true,
+  "ratings": [],
+  "createdAt": {
+    "$date": "2025-05-25T08:43:39.965Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-25T08:43:39.965Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6832d8e113883dddb4e85da1"
+  },
+  "name": "Hotel Gran Villa",
+  "description": "Disfruta de nuestro toque rupestre en nuestra tematica para sentirte y viajar al pasado ",
+  "address": "12 av zona 1 ",
+  "images": [
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748162783/hotels-img/b6aa915a8af1139561f0b9ec24a2e5af-1748162783285.jpg",
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748162784/hotels-img/landscape-2016308_1280-1748162783286.jpg",
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748162785/hotels-img/hotel-ejemplo-1748162783291.jpg"
+  ],
+  "telephone": "123456",
+  "services": [
+    {
+      "type": "Deluxeroom",
+      "description": "Habitación individual con cama sencilla y baño privado.",
+      "price": 500,
+      "_id": {
+        "$oid": "6832d8e113883dddb4e85da2"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "683111e74c420ecad5953f5d"
+  },
+  "reservations": [],
+  "rooms": [],
+  "averageRating": 0,
+  "status": true,
+  "ratings": [],
+  "createdAt": {
+    "$date": "2025-05-25T08:46:25.983Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-25T08:46:25.983Z"
+  }
+}]

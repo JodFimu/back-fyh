@@ -1,0 +1,108 @@
+[{
+  "_id": {
+    "$oid": "6832dadb13883dddb4e85da9"
+  },
+  "numRoom": "002",
+  "description": "Room for everyone atleast white",
+  "capacity": "5",
+  "pricePerDay": 100,
+  "status": true,
+  "type": "SINGLE",
+  "images": [
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748163290/rooms-img/hoteL-los_picos_bucerias-1748163289634.jpg",
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748163291/rooms-img/images-1748163289635.jpg"
+  ],
+  "hotel": {
+    "$oid": "6832d6f813883dddb4e85d90"
+  },
+  "reservations": [
+    null,
+    null
+  ],
+  "__v": 2
+},
+{
+  "_id": {
+    "$oid": "6832db0c13883dddb4e85dac"
+  },
+  "numRoom": "003",
+  "description": "Room for everyone atleast white",
+  "capacity": "5",
+  "pricePerDay": 100,
+  "status": true,
+  "type": "SINGLE",
+  "images": [
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748163339/rooms-img/hoteL-los_picos_bucerias-1748163338225.jpg",
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748163339/rooms-img/images-1748163338227.jpg"
+  ],
+  "hotel": {
+    "$oid": "6832d6f813883dddb4e85d90"
+  },
+  "reservations": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6832db1713883dddb4e85daf"
+  },
+  "numRoom": "004",
+  "description": "Room for everyone atleast white",
+  "capacity": "5",
+  "pricePerDay": 100,
+  "status": true,
+  "type": "SINGLE",
+  "images": [
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748163350/rooms-img/hoteL-los_picos_bucerias-1748163349654.jpg",
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748163350/rooms-img/images-1748163349657.jpg"
+  ],
+  "hotel": {
+    "$oid": "6832d6f813883dddb4e85d90"
+  },
+  "reservations": [
+    null
+  ],
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "6832db1e13883dddb4e85db2"
+  },
+  "numRoom": "005",
+  "description": "Room for everyone atleast white",
+  "capacity": "5",
+  "pricePerDay": 100,
+  "status": true,
+  "type": "SINGLE",
+  "images": [
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748163357/rooms-img/hoteL-los_picos_bucerias-1748163356522.jpg",
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748163357/rooms-img/images-1748163356524.jpg"
+  ],
+  "hotel": {
+    "$oid": "6832d6f813883dddb4e85d90"
+  },
+  "reservations": [
+    null,
+    null
+  ],
+  "__v": 2
+},
+{
+  "_id": {
+    "$oid": "6832db2513883dddb4e85db5"
+  },
+  "numRoom": "006",
+  "description": "Room for everyone atleast white",
+  "capacity": "5",
+  "pricePerDay": 100,
+  "status": true,
+  "type": "SINGLE",
+  "images": [
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748163364/rooms-img/hoteL-los_picos_bucerias-1748163363919.jpg",
+    "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748163364/rooms-img/images-1748163363923.jpg"
+  ],
+  "hotel": {
+    "$oid": "6832d6f813883dddb4e85d90"
+  },
+  "reservations": [],
+  "__v": 0
+}]

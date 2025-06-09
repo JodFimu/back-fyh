@@ -5,7 +5,8 @@ export const cloudinaryUploadMiddleware = (folder = "default") => {
     return async (req, res, next) => {
         try {
             if (!req.file || !req.file.path) {
-                return res.status(400).json({ error: "No se recibió ninguna imagen" });
+              req.img = "https://res.cloudinary.com/dibe6yrzf/image/upload/v1747668225/perfil-de-usuario_cxmmxq.png"; 
+              return next();            
             }
 
             const { secure_url } = await uploadImage(req.file, folder);

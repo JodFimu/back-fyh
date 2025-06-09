@@ -9,7 +9,7 @@ import { deleteFileOnError } from "./delete-file-on-error.js";
 export const validateCrateRoom = [
     validateJWT,
     hasRoles("ADMIN_ROLE", "HOST_ROLE"),
-    body("name").notEmpty().withMessage("Name is required").isLength({max: 35}).withMessage("Name cannot exceed 35 characters"),
+    body("numRoom").notEmpty().withMessage("Name is required"),
     body("description").notEmpty().withMessage("Description is required").isLength({max: 100}).withMessage("Description cannot exceed 100 characters"),
     body("capacity").notEmpty().withMessage("Capacity is required").isLength({max: 5}).withMessage("Capacity cannot exceed 5 characters"),
     body("pricePerDay").notEmpty().withMessage("Price per day is required").isNumeric().withMessage("Price per day must be a number"),
@@ -31,5 +31,10 @@ export const validateUpdateRoom = [
     param("rid").isMongoId().withMessage("The id is not valid"),
     validateField,
     deleteFileOnError,
+    handleErrors
+]
+
+export const filterRoomsValidator = [
+    validateField,
     handleErrors
 ]

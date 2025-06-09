@@ -1,11 +1,10 @@
 import {Schema, model} from 'mongoose';
 
 const roomSchema = Schema({
-    name: {
+    numRoom: {
         type: String,
-        required: [true, "Name is required"],
-        maxLength: [35, "Name cannot exceed 35 characters"],
-        unique: true
+        required: [true, "Room number is required"],
+        maxLength: [35, "Room number cannot exceed 35 characters"]
     },
     description: {
         type: String,
@@ -40,11 +39,11 @@ const roomSchema = Schema({
             message: "Must include at least one image"
         }
     },
-    /*hotel: {
+    hotel: {
         type: Schema.Types.ObjectId,
         ref: 'Hotel',
         required: [true, "Hotel is required"]
-    },*/
+    },
     reservations: [
         {
             type: Schema.Types.ObjectId,

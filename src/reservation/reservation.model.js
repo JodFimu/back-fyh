@@ -5,13 +5,18 @@ const reservationSchema = Schema({
         type: Date,
         required: true
     },
-    extiDate: {
+    exitDate: {
         type: Date,
         required: true 
     },
     user: {
         type: Schema.Types.ObjectId,
         ref: "User",
+        required: true
+    },
+    room: {
+        type: Schema.Types.ObjectId,
+        ref: "Room",
         required: true
     },
     status: {
@@ -21,8 +26,8 @@ const reservationSchema = Schema({
 })
 
 reservationSchema.methods.toJSON = function () {
-    const { user, _id, ...reservation } = this.toObject()
-    reservation.id = _id 
+    const {_id, ...reservation } = this.toObject()
+    reservation.rid = _id 
     return reservation
 }
 

@@ -1,0 +1,114 @@
+[{
+  "_id": {
+    "$oid": "6832c3ead14ddb5a0ba51e16"
+  },
+  "startDate": {
+    "$date": "2025-06-01T00:00:00.000Z"
+  },
+  "exitDate": {
+    "$date": "2025-06-05T00:00:00.000Z"
+  },
+  "user": {
+    "$oid": "683109583e47cccba7a6b848"
+  },
+  "room": {
+    "$oid": "6832c33bd14ddb5a0ba51e0f"
+  },
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6832dbaa13883dddb4e85dbf"
+  },
+  "startDate": {
+    "$date": "2025-06-01T00:00:00.000Z"
+  },
+  "exitDate": {
+    "$date": "2025-06-05T00:00:00.000Z"
+  },
+  "user": {
+    "$oid": "6832db9613883dddb4e85dba"
+  },
+  "room": {
+    "$oid": "6832dadb13883dddb4e85da9"
+  },
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6832dbd213883dddb4e85dc7"
+  },
+  "startDate": {
+    "$date": "2025-07-01T00:00:00.000Z"
+  },
+  "exitDate": {
+    "$date": "2025-07-08T00:00:00.000Z"
+  },
+  "user": {
+    "$oid": "6832db9613883dddb4e85dba"
+  },
+  "room": {
+    "$oid": "6832dadb13883dddb4e85da9"
+  },
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6832dbe213883dddb4e85dcf"
+  },
+  "startDate": {
+    "$date": "2025-07-01T00:00:00.000Z"
+  },
+  "exitDate": {
+    "$date": "2025-07-08T00:00:00.000Z"
+  },
+  "user": {
+    "$oid": "6832db9613883dddb4e85dba"
+  },
+  "room": {
+    "$oid": "6832db1713883dddb4e85daf"
+  },
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6832dbf613883dddb4e85dd7"
+  },
+  "startDate": {
+    "$date": "2025-07-01T00:00:00.000Z"
+  },
+  "exitDate": {
+    "$date": "2025-07-08T00:00:00.000Z"
+  },
+  "user": {
+    "$oid": "6832db9613883dddb4e85dba"
+  },
+  "room": {
+    "$oid": "6832db1e13883dddb4e85db2"
+  },
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6832dc0813883dddb4e85ddf"
+  },
+  "startDate": {
+    "$date": "2025-08-01T00:00:00.000Z"
+  },
+  "exitDate": {
+    "$date": "2025-08-08T00:00:00.000Z"
+  },
+  "user": {
+    "$oid": "6832db9613883dddb4e85dba"
+  },
+  "room": {
+    "$oid": "6832db1e13883dddb4e85db2"
+  },
+  "status": true,
+  "__v": 0
+}]

@@ -1,18 +1,24 @@
 import { Router } from "express";
-import { createRoom, getRooms, getRoomById, updateRoom, updateRoomImages} from "./room.controller.js";
-import { validateCrateRoom, validateGetRoomById, validateUpdateRoom} from "../middlewares/room-validator.js";
+import { createRoom, getRooms, getRoomById, updateRoom, updateRoomImages, filterRooms} from "./room.controller.js";
+import { validateCrateRoom, validateGetRoomById, validateUpdateRoom, filterRoomsValidator} from "../middlewares/room-validator.js";
 import { uploadRoomImage } from "../middlewares/multer-uploads.js";
 import {  cloudinaryUploadMultiple } from "../middlewares/img-uploads.js";
 
 const router = Router();
+/**
+ * @swagger
+ * tags:
+ *   - name: Rooms
+ *     description: API for managing rooms
+ */
 
 /**
  * @swagger
- * /room/createRoom:
+ * /createRoom:
  *   post:
  *     summary: Crear una nueva habitación
  *     tags:
- *       - Room
+ *       - Rooms
  *     requestBody:
  *       required: true
  *       content:
@@ -25,9 +31,9 @@ const router = Router();
  *                 example: Habitación Deluxe
  *               description:
  *                 type: string
- *                 example: Habitación con vista al mar
+ *                 example: Vista al mar
  *               capacity:
- *                 type: string
+ *                 type: integer
  *                 example: 2
  *               pricePerDay:
  *                 type: number
@@ -43,30 +49,38 @@ const router = Router();
  *                   format: binary
  *     responses:
  *       201:
- *         description: Habitación creada exitosamente
+ *         description: Habitación creada
  *       400:
- *         description: Error de validación
+ *         description: Validación fallida
  */
+router.post(
+  "/createRoom",
+  uploadRoomImage.array("images", 5),
+  cloudinaryUploadMultiple("rooms-img"),
+  validateCrateRoom,
+  createRoom
+);
 
 /**
  * @swagger
- * /room/getRooms:
+ * /getRooms:
  *   get:
  *     summary: Obtener todas las habitaciones
  *     tags:
- *       - Room
+ *       - Rooms
  *     responses:
  *       200:
  *         description: Lista de habitaciones
  */
+router.get("/getRooms", getRooms);
 
 /**
  * @swagger
- * /room/getRoomById/{rid}:
+ * /getRoomById/{rid}:
  *   get:
- *     summary: Obtener una habitación por ID
+ *     summary: Obtener habitación por ID
  *     tags:
- *       - Room
+ *       - Rooms
  *     parameters:
  *       - in: path
  *         name: rid
@@ -78,23 +92,23 @@ const router = Router();
  *       200:
  *         description: Habitación encontrada
  *       404:
- *         description: Habitación no encontrada
+ *         description: No encontrada
  */
+router.get("/getRoomById/:rid", validateGetRoomById, getRoomById);
 
 /**
  * @swagger
- * /room/updateRoom/{rid}:
+ * /updateRoom/{rid}:
  *   put:
  *     summary: Actualizar datos de una habitación
  *     tags:
- *       - Room
+ *       - Rooms
  *     parameters:
  *       - in: path
  *         name: rid
  *         required: true
  *         schema:
  *           type: string
- *         description: ID de la habitación
  *     requestBody:
  *       required: true
  *       content:
@@ -107,7 +121,7 @@ const router = Router();
  *               description:
  *                 type: string
  *               capacity:
- *                 type: string
+ *                 type: integer
  *               pricePerDay:
  *                 type: number
  *               type:
@@ -115,25 +129,25 @@ const router = Router();
  *                 enum: [SINGLE, DOUBLE, SUITE, DELUXE]
  *     responses:
  *       200:
- *         description: Habitación actualizada
+ *         description: Actualizada
  *       400:
- *         description: Error de validación
+ *         description: Validación fallida
  */
+router.put("/updateRoom/:rid", validateUpdateRoom, updateRoom);
 
 /**
  * @swagger
- * /room/updateImages/{rid}:
+ * /updateImages/{rid}:
  *   patch:
  *     summary: Actualizar imágenes de una habitación
  *     tags:
- *       - Room
+ *       - Rooms
  *     parameters:
  *       - in: path
  *         name: rid
  *         required: true
  *         schema:
  *           type: string
- *         description: ID de la habitación
  *     requestBody:
  *       required: true
  *       content:
@@ -150,17 +164,58 @@ const router = Router();
  *       200:
  *         description: Imágenes actualizadas
  *       400:
- *         description: Error de validación
+ *         description: Validación fallida
  */
+router.patch(
+  "/updateImages/:rid",
+  uploadRoomImage.array("images", 5),
+  cloudinaryUploadMultiple("rooms-img"),
+  validateUpdateRoom,
+  updateRoomImages
+);
 
-router.post("/createRoom", uploadRoomImage.array("images", 5), cloudinaryUploadMultiple("rooms-img"), validateCrateRoom, createRoom);
-
-router.get("/getRooms", getRooms);
-
-router.get("/getRoomById/:rid", validateGetRoomById, getRoomById);
-
-router.put("/updateRoom/:rid", validateUpdateRoom, updateRoom);
-
-router.patch("/updateImages/:rid", uploadRoomImage.array("images", 5), cloudinaryUploadMultiple("rooms-img"), validateUpdateRoom, updateRoomImages);
+/**
+ * @swagger
+ * /filterRooms:
+ *   get:
+ *     summary: Filtrar habitaciones por parámetros y disponibilidad de fechas
+ *     tags:
+ *       - Rooms
+ *     parameters:
+ *       - in: query
+ *         name: capacity
+ *         schema:
+ *           type: string
+ *         description: Capacidad de la habitación
+ *       - in: query
+ *         name: pricePerDay
+ *         schema:
+ *           type: number
+ *         description: Precio máximo por día
+ *       - in: query
+ *         name: type
+ *         schema:
+ *           type: string
+ *           enum: [SINGLE, DOUBLE, SUITE, DELUXE]
+ *         description: Tipo de habitación
+ *       - in: query
+ *         name: startDate
+ *         schema:
+ *           type: string
+ *           format: date
+ *         description: Fecha de entrada (YYYY-MM-DD)
+ *       - in: query
+ *         name: extiDate
+ *         schema:
+ *           type: string
+ *           format: date
+ *         description: Fecha de salida (YYYY-MM-DD)
+ *     responses:
+ *       200:
+ *         description: Lista de habitaciones filtradas y disponibles
+ *       400:
+ *         description: Parámetros inválidos
+ */
+router.get("/filterRooms", filterRoomsValidator, filterRooms);
 
 export default router;

@@ -1,0 +1,1375 @@
+{
+	"info": {
+		"_postman_id": "517f6c7f-f13a-470b-a335-7b43cf39acd8",
+		"name": "Endpoints Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37641954"
+	},
+	"item": [
+		{
+			"name": "Hotel",
+			"item": [
+				{
+					"name": "get hotels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/hotels/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"hotels",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get hotel by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/hotels/findHotel/:hid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"hotels",
+								"findHotel",
+								":hid"
+							],
+							"variable": [
+								{
+									"key": "hid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateHotel",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/hotels/updateHotel/:hid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"hotels",
+								"updateHotel",
+								":hid"
+							],
+							"variable": [
+								{
+									"key": "hid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePictures",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/hotels/updatePictures/:hid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"hotels",
+								"updatePictures",
+								":hid"
+							],
+							"variable": [
+								{
+									"key": "hid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteHotel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Hotel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJhNzUwYmEyZDFjYTg3Yzc0ZTMwYzYiLCJpYXQiOjE3NDc2MTI5NTIsImV4cCI6MTc0NzYxNjU1Mn0.KygaW23JmQn9M_2Rwqm9UjsF-BQjcwcOsjMxU9v1S6M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "h1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "h2",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "h3",
+									"type": "text"
+								},
+								{
+									"key": "pictures",
+									"type": "file",
+									"src": "/C:/Users/ersc2/Pictures/Wallpaper's/batman.jpg"
+								},
+								{
+									"key": "telephone",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "services[0][type]",
+									"value": "Singleroom",
+									"type": "text"
+								},
+								{
+									"key": "services[0][description]",
+									"value": "Habitación individual con cama sencilla y baño privado.",
+									"type": "text"
+								},
+								{
+									"key": "services[0][price]",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "host",
+									"value": "682a769fa2d1ca87c74e30cb",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/hotels/createHotel",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"hotels",
+								"createHotel"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reports",
+			"item": [
+				{
+					"name": "top hotels",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"extiDate\": \"2026-06-05T12:00:00.000Z\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/reports/getTopHotels",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"reports",
+								"getTopHotels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reservations by hotel",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI2OGIxYmQ0MzEzN2FmYjkzYmU4MmUiLCJpYXQiOjE3NDc2MjAyODgsImV4cCI6MTc0NzYyMzg4OH0.RLIiLnzEEohG6S1Uz5J66pph3griTpDifey2FyT66Ow",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/reports/getHotelReservations/682a4b868a649e5d2cd7dab5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"reports",
+								"getHotelReservations",
+								"682a4b868a649e5d2cd7dab5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "eventos",
+			"item": [
+				{
+					"name": "crear event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI2OGIxYmQ0MzEzN2FmYjkzYmU4MmUiLCJpYXQiOjE3NDc1NDE3MTcsImV4cCI6MTc0NzU0NTMxN30.tLCgM3y9pTCeTz18Evd9JAUXdVnqZiG_xVkavn7ubB4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Evento de ejemplo\",\r\n  \"description\": \"Descripción del evento\",\r\n  \"date\": \"2024-06-01\",           \r\n  \"time\": \"18:00\",\r\n  \"location\": \"Ciudad\",\r\n  \"category\": \"party\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/events/createEvent",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"events",
+								"createEvent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/events/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"events",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI2OGIxYmQ0MzEzN2FmYjkzYmU4MmUiLCJpYXQiOjE3NDc1MzQ5NDcsImV4cCI6MTc0NzUzODU0N30.JGm1KR5r37FkOyKjCch3xzgeTUHXCt5VSfOSoj8zEIQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/events/6829326a3715e622831d3833",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"events",
+								"6829326a3715e622831d3833"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI2OGIxYmQ0MzEzN2FmYjkzYmU4MmUiLCJpYXQiOjE3NDc1MzQ5NDcsImV4cCI6MTc0NzUzODU0N30.JGm1KR5r37FkOyKjCch3xzgeTUHXCt5VSfOSoj8zEIQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"hola\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/events/editEvent/6829326a3715e622831d3833",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"events",
+								"editEvent",
+								"6829326a3715e622831d3833"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI2OGIxYmQ0MzEzN2FmYjkzYmU4MmUiLCJpYXQiOjE3NDc1MzQ5NDcsImV4cCI6MTc0NzUzODU0N30.JGm1KR5r37FkOyKjCch3xzgeTUHXCt5VSfOSoj8zEIQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/events/deleteEvent/6829326a3715e622831d3833",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"events",
+								"deleteEvent",
+								"6829326a3715e622831d3833"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar por host",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI2OGIxYmQ0MzEzN2FmYjkzYmU4MmUiLCJpYXQiOjE3NDc1MzQ5NDcsImV4cCI6MTc0NzUzODU0N30.JGm1KR5r37FkOyKjCch3xzgeTUHXCt5VSfOSoj8zEIQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/events/searchByHost/68268b1bd43137afb93be82e",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"events",
+								"searchByHost",
+								"68268b1bd43137afb93be82e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rooms",
+			"item": [
+				{
+					"name": "Update Room Images",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI2OGIxYmQ0MzEzN2FmYjkzYmU4MmUiLCJpYXQiOjE3NDczNTkzMDEsImV4cCI6MTc0NzM2MjkwMX0.pY9emh22RuoS7z0ZX8wy4A34R02o40CWNEmGmvkJQ8k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/andre/Downloads/gato callejero.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/rooms/updateImages/68268d8b6536488b65e501b9",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"rooms",
+								"updateImages",
+								"68268d8b6536488b65e501b9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Room",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI2OGIxYmQ0MzEzN2FmYjkzYmU4MmUiLCJpYXQiOjE3NDczNTkzMDEsImV4cCI6MTc0NzM2MjkwMX0.pY9emh22RuoS7z0ZX8wy4A34R02o40CWNEmGmvkJQ8k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"002\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/rooms/updateRoom/68268d8b6536488b65e501b9",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"rooms",
+								"updateRoom",
+								"68268d8b6536488b65e501b9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Room by Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/rooms/getRoomById/68268d8b6536488b65e501b9",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"rooms",
+								"getRoomById",
+								"68268d8b6536488b65e501b9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Rooms",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/rooms/getRooms",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"rooms",
+								"getRooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create room",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODI2OGIxYmQ0MzEzN2FmYjkzYmU4MmUiLCJpYXQiOjE3NDc2MDM1OTgsImV4cCI6MTc0NzYwNzE5OH0.NmZk5x3wlvR3E6EkbLi-U9r2wDTF6jgGOKjJCMd7nGM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "numRoom",
+									"value": "001",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Room for everyone atleast white",
+									"type": "text"
+								},
+								{
+									"key": "capacity",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "pricePerDay",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "SINGLE",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/andre/OneDrive/Imágenes/Roblox/RobloxScreenShot20240513_171613148.png"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/andre/OneDrive/Imágenes/EXcbE0fWAAY77mY.jpg"
+								},
+								{
+									"key": "hotel",
+									"value": "682a4b868a649e5d2cd7dab5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/rooms/createRoom",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"rooms",
+								"createRoom"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"12345Aa@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/C:/Users/andre/Downloads/gato callejero.jpg"
+								},
+								{
+									"key": "name",
+									"value": "User123",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345Aa@",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "ADMIN_ROLE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/users/findUser/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"users",
+								"findUser",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/users/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/users/deleteUserAdmin/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"users",
+								"deleteUserAdmin",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUserClient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/users/deleteUserClient",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"users",
+								"deleteUserClient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/users/updatePassword",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"users",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/users/updateUser",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"users",
+								"updateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUserAdmin",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/users/updateUserAdmin/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"users",
+								"updateUserAdmin",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/users/createUser",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"users",
+								"createUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRole",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/users/updateRole/:uid",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"users",
+								"updateRole",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProfilePicture",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/users/updateProfilePicture",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"users",
+								"updateProfilePicture"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reservation",
+			"item": [
+				{
+					"name": "CreateResevation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJhM2NlYzE5NzQ1MWM0ZjdhN2I2MWQiLCJpYXQiOjE3NDc4ODMxOTAsImV4cCI6MTc0Nzg4Njc5MH0.VdZt9Fry5U02gSAbNQt1OP0cXIl7D8gEjcPykqI_cBU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"startDate\": \"2025-06-01\",\r\n  \"exitDate\": \"2025-06-05\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/reservations/createReser/682a7d370a4855578bb994db",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"reservations",
+								"createReser",
+								"682a7d370a4855578bb994db"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get reservation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/reservations/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"reservations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get reservation by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/reservations/listReser/:id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"reservations",
+								"listReser",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateReser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/reservations/updateReser/:id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"reservations",
+								"updateReser",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteReser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/reservations/deleteReser/:id",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"reservations",
+								"deleteReser",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reserByRoom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Factura",
+			"item": [
+				{
+					"name": "Crear factura",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJhM2NlYzE5NzQ1MWM0ZjdhN2I2MWQiLCJpYXQiOjE3NDc3ODEzMDAsImV4cCI6MTc0Nzc4NDkwMH0.hGLrzKrzxU_wcAIPHbR3ihiBg8h0zlFe5l7VzVjOC_0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rid\": \"682d083667f94a20e11be78e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/FYPH/v1/bills/generate",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"bills",
+								"generate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

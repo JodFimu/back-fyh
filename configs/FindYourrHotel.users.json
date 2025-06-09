@@ -1,0 +1,182 @@
+[{
+  "_id": {
+    "$oid": "683109583e47cccba7a6b848"
+  },
+  "profilePicture": "https://res.cloudinary.com/dibe6yrzf/image/upload/v1747668225/perfil-de-usuario_cxmmxq.png",
+  "name": "Admin",
+  "email": "admin@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$N14K9y/F2qBnBNk2NFhnqg$Em9GQZOKydUw7iOdgViRr5cc0xb+YzqaqUI4Mjj5Si8",
+  "role": "ADMIN_ROLE",
+  "reservations": [],
+  "events": [],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "683111af4c420ecad5953f5a"
+  },
+  "profilePicture": "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748046255/profile-img/Onlyfans-Logo-1748046254476.png",
+  "name": "User123",
+  "email": "user@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$EIFKIp6frY3ui90HZf5ZZg$TEOZPkIFGJtXFsC98pBd6uzmG8lN3UFSHqe2/nCIE7s",
+  "role": "ADMIN_ROLE",
+  "reservations": [],
+  "events": [],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "683111e74c420ecad5953f5d"
+  },
+  "profilePicture": "https://res.cloudinary.com/dibe6yrzf/image/upload/v1748046311/profile-img/Onlyfans-Logo-1748046310563.png",
+  "name": "Angela White",
+  "email": "user55@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$n9LzpmIie1YCB2I9I62y7g$4ZRGwNPrXb+4+0UAcY4J08MoIpKFagawJt2DVLRNs/0",
+  "role": "HOST_ROLE",
+  "reservations": [],
+  "events": [],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68328e9233f18798c356becf"
+  },
+  "profilePicture": "https://res.cloudinary.com/dibe6yrzf/image/upload/v1747668225/perfil-de-usuario_cxmmxq.png",
+  "name": "User123",
+  "email": "userooo@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$thKLJwEba/uxGQSteb8OFg$m+4l2i3Vkr8LLPLrZazFjdVrXcn8ATU3lc4husPgygs",
+  "role": "ADMIN_ROLE",
+  "reservations": [],
+  "events": [],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68328fd6d5047ba263690068"
+  },
+  "profilePicture": "https://res.cloudinary.com/dibe6yrzf/image/upload/v1747668225/perfil-de-usuario_cxmmxq.png",
+  "name": "User123",
+  "email": "userooo123@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$zaqy2Z2Nk4VkiqYT5qjZ2w$IiFtSj8f5geFJZ349g2DnxWszWNQjbTTundqgPVd6cw",
+  "role": "ADMIN_ROLE",
+  "reservations": [],
+  "events": [],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6832906ad5047ba26369006f"
+  },
+  "profilePicture": "https://res.cloudinary.com/dibe6yrzf/image/upload/v1747668225/perfil-de-usuario_cxmmxq.png",
+  "name": "Ana de Armas ",
+  "email": "anadearmas123@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$Vjf58e0+fnGRx9JaFgXn5w$tALl3MIO8hRlbXPVfJlNrubKjAb7asjvN7CtuAQXLNs",
+  "role": "CLIENT_ROLE",
+  "reservations": [],
+  "events": [],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68329375d5047ba263690072"
+  },
+  "profilePicture": "https://res.cloudinary.com/dibe6yrzf/image/upload/v1747668225/perfil-de-usuario_cxmmxq.png",
+  "name": "Ana López",
+  "email": "ana.lopez@email.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$8zjJYbq4w5X6w++tBKYyvQ$P2GKY2W6Eml1RK7RtWHFWDdXxZhyVXMnUtG/5uKKyGg",
+  "role": "CLIENT_ROLE",
+  "reservations": [],
+  "events": [],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6832985ed5047ba263690075"
+  },
+  "profilePicture": "https://res.cloudinary.com/dibe6yrzf/image/upload/v1747668225/perfil-de-usuario_cxmmxq.png",
+  "name": "Julio Ramos",
+  "email": "julito@email.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$+as+Htpn1gcczxDNQscrSA$V7FsctaZpEKj1LZFlluLwkDd7hT2EZ0pw/0sRtxw1oQ",
+  "role": "ADMIN_ROLE",
+  "reservations": [],
+  "events": [],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6832a5013e4303a9d805fe67"
+  },
+  "profilePicture": "https://res.cloudinary.com/dibe6yrzf/image/upload/v1747668225/perfil-de-usuario_cxmmxq.png",
+  "name": "Julio Ramos",
+  "email": "julito89@email.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$c/BkDWUnwHGd5jyd1yBDGw$HbgPUfhYFH3qxhLq7G6QeTk6TujapW6oXazRzOvhASY",
+  "role": "ADMIN_ROLE",
+  "reservations": [],
+  "events": [],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6832bc3808525805cfb61388"
+  },
+  "profilePicture": "https://res.cloudinary.com/dibe6yrzf/image/upload/v1747668225/perfil-de-usuario_cxmmxq.png",
+  "name": "julito12",
+  "email": "ramos20096@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$4C+7hrtjiihI3hDoO1taoQ$E0mKtmKn0sfoDD+IyGFETOwLrcQIEe7JMZbx9yLbTFg",
+  "role": "ADMIN_ROLE",
+  "reservations": [],
+  "events": [],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6832bd6f038f8c7c13d6e535"
+  },
+  "profilePicture": "https://res.cloudinary.com/dibe6yrzf/image/upload/v1747668225/perfil-de-usuario_cxmmxq.png",
+  "name": "Julio Ramos",
+  "email": "julito89vs@email.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$+tRh76XLzziIOkZVGgMsrw$rOqFrTUrrsAUnxRwAklFpHIourQR813v+MRB9FF92yI",
+  "role": "CLIENT_ROLE",
+  "reservations": [],
+  "events": [],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6832d58313883dddb4e85d84"
+  },
+  "profilePicture": "https://res.cloudinary.com/dibe6yrzf/image/upload/v1747668225/perfil-de-usuario_cxmmxq.png",
+  "name": "Julio ",
+  "email": "prueba@email.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$vk7Zuc42Rd8OS4AFPgQERQ$b4KwH2jYsjL7y4QQs4Jdu/XF8WC4Vl7j6e/XQQvsnmM",
+  "role": "HOST_ROLE",
+  "reservations": [],
+  "events": [],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6832db9613883dddb4e85dba"
+  },
+  "profilePicture": "https://res.cloudinary.com/dibe6yrzf/image/upload/v1747668225/perfil-de-usuario_cxmmxq.png",
+  "name": "Julio ",
+  "email": "prueba1@email.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$Gbydywq1wNy7/PB7YObYeA$SHjuAInYyquQ4/F3tGBd0P07hxgAqU6VF8eLiScQDZE",
+  "role": "CLIENT_ROLE",
+  "reservations": [],
+  "events": [],
+  "status": true,
+  "__v": 0
+}]

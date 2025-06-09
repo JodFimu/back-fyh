@@ -23,6 +23,10 @@ const options ={
         "./src/auth/auth.routes.js",
         "./src/user/user.routes.js",
         "./src/hotel/hotel.routes.js",
+        "./src/room/room.routes.js",
+        "./src/event/event.routes.js",
+        "./src/reservation/reservation.routes.js",
+        "./src/bill/bill.routes.js"
     ]
 }
 

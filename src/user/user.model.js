@@ -24,7 +24,7 @@ const userSchema = Schema({
         default: "CLIENT_ROLE",
         enum: ["ADMIN_ROLE", "CLIENT_ROLE", "HOST_ROLE"]
     },
-    reservation: [
+    reservations: [
         {
             type: Schema.Types.ObjectId,
             ref: 'Reservation'
