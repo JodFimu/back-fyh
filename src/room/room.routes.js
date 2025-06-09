@@ -1,8 +1,7 @@
 import { Router } from "express";
 import { createRoom, getRooms, getRoomById, updateRoom, updateRoomImages, filterRooms} from "./room.controller.js";
 import { validateCrateRoom, validateGetRoomById, validateUpdateRoom, filterRoomsValidator} from "../middlewares/room-validator.js";
-import { uploadRoomImage } from "../middlewares/multer-uploads.js";
-import {  cloudinaryUploadMultiple } from "../middlewares/img-uploads.js";
+import { cloudinaryUploadMultiple } from "../middlewares/img-uploads.js";
 
 const router = Router();
 /**
@@ -55,7 +54,6 @@ const router = Router();
  */
 router.post(
   "/createRoom",
-  uploadRoomImage.array("images", 5),
   cloudinaryUploadMultiple("rooms-img"),
   validateCrateRoom,
   createRoom
@@ -168,7 +166,6 @@ router.put("/updateRoom/:rid", validateUpdateRoom, updateRoom);
  */
 router.patch(
   "/updateImages/:rid",
-  uploadRoomImage.array("images", 5),
   cloudinaryUploadMultiple("rooms-img"),
   validateUpdateRoom,
   updateRoomImages

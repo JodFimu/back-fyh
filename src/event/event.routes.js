@@ -14,7 +14,6 @@ import {
 } from "../middlewares/event-validator.js";
 import { cloudinaryUploadMultiple } from "../middlewares/img-uploads.js";
 
-import { uploadEventImage } from "../middlewares/multer-uploads.js";
 
 const router = Router();
 
@@ -98,7 +97,7 @@ router.get("/:eid", createEventValidator, getEventById);
  *         description: Error de validación
  */
 
-router.post("/createEvent",  uploadEventImage.array("pictures", 5),cloudinaryUploadMultiple("events-img"),  createEventValidator, createEvent);
+router.post("/createEvent",cloudinaryUploadMultiple("events-img"),  createEventValidator, createEvent);
 
 /**
  * @swagger
@@ -137,7 +136,7 @@ router.post("/createEvent",  uploadEventImage.array("pictures", 5),cloudinaryUpl
  */
 router.put("/editEvent/:eid", updateEventValidator, updateEvent);
 
-router.patch("/updatePictures/:hid", uploadEventImage.array("pictures", 5), cloudinaryUploadMultiple("events-img"), createEventValidator, updateEventPictures);
+router.patch("/updatePictures/:hid", cloudinaryUploadMultiple("events-img"), createEventValidator, updateEventPictures);
 
 
 /**

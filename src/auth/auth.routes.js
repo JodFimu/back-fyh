@@ -1,7 +1,6 @@
 import { Router } from "express";
 import { register, login } from "./auth.controller.js";
 import { validatorLogin, validatorRegister } from "../middlewares/user-validator.js";
-import { uploadProfilePicture } from "../middlewares/multer-uploads.js";
 import { cloudinaryUploadMiddleware } from "../middlewares/img-uploads.js";
 
 const router = Router();
@@ -50,7 +49,7 @@ const router = Router();
  *         description: Internal server error
  *     security: []
  */
-router.post("/register", uploadProfilePicture.single("img"), cloudinaryUploadMiddleware("profile-img"), validatorRegister, register);
+router.post("/register", cloudinaryUploadMiddleware("profile-img"), validatorRegister, register);
 
 /**
  * @swagger

@@ -4,7 +4,6 @@ import { getUserById, getUsers, deleteUserAdmin, updatePassword, updateUserUser,
 import { getUserByIdValidator, updatePasswordValidator, deleteUserValidatorClient, deleteUserValidatorAdmin, 
     createUserValidation, updateRoleValidator, getUserValidation, updateProfilePictureValidator, getUserReservationsValidator, getRoleValidator } from "../middlewares/user-validator.js";
 import { register } from "../auth/auth.controller.js";
-import { uploadProfilePicture } from "../middlewares/multer-uploads.js";
 import { cloudinaryUploadMiddleware } from "../middlewares/img-uploads.js";
 
 const router = Router();
@@ -193,7 +192,7 @@ router.put("/updateUserAdmin/:uid", deleteUserValidatorAdmin, updateUserAdmin);
  *       400:
  *         description: Validation error
  */
-router.post("/createUser", uploadProfilePicture.single("profilePicture"), cloudinaryUploadMiddleware("profile-img"), createUserValidation, register);
+router.post("/createUser", cloudinaryUploadMiddleware("profile-img"), createUserValidation, register);
 
 /**
  * @swagger
@@ -251,7 +250,7 @@ router.patch("/updateRole/:uid", updateRoleValidator, updateRole);
  *       500:
  *         description: Server error
  */
-router.patch("/updateProfilePicture", uploadProfilePicture.single("img"), cloudinaryUploadMiddleware("profile-img"), updateProfilePictureValidator, updateProfilePicture )
+router.patch("/updateProfilePicture", cloudinaryUploadMiddleware("profile-img"), updateProfilePictureValidator, updateProfilePicture )
 
 /**
  * @swagger

@@ -1,7 +1,6 @@
 import { Router } from "express";
 import { createHotel, deleteHotel, getHotels, getHotelById, updateHotel, updateHotelPictures, getReservationsByHotel, createService, getRoomsByHotelById, getUsersByHotel } from "../hotel/hotel.controller.js";
 import { createHotelValidator, deleteHotelValidator, getHotelByIdValidator, getHotelsValidator, updateHotelPicturesValidator, updateHotelValidator, getReservationsByHotelValidator, createServiceValidator, parseServicesMiddleware, getUsersByHotelValidator} from "../middlewares/hotel-validator.js";
-import { uploadHotelImage } from "../middlewares/multer-uploads.js";
 import { cloudinaryUploadMultiple } from "../middlewares/img-uploads.js";
  
 const router = Router();
@@ -66,7 +65,7 @@ const router = Router();
  *       400:
  *         description: Error de validación o datos incorrectos
  */
-router.post("/createHotel", uploadHotelImage.array("pictures", 5), cloudinaryUploadMultiple("hotels-img"),parseServicesMiddleware, createHotelValidator, createHotel);
+router.post("/createHotel", cloudinaryUploadMultiple("hotels-img"),parseServicesMiddleware, createHotelValidator, createHotel);
  
 /**
  * @swagger
@@ -205,7 +204,7 @@ router.put("/updateHotel/:hid", updateHotelValidator, updateHotel);
  *       404:
  *         description: Hotel no encontrado
  */
-router.patch("/updatePictures/:hid", uploadHotelImage.array("pictures", 5), cloudinaryUploadMultiple("hotels-img"), updateHotelPicturesValidator, updateHotelPictures);
+router.patch("/updatePictures/:hid", cloudinaryUploadMultiple("hotels-img"), updateHotelPicturesValidator, updateHotelPictures);
  
 /**
  * @swagger

@@ -1,24 +1,31 @@
-import fs from "fs";
-import { uploadImage } from "../helpers/coudinary-uploads.js";
+import { v2 as cloudinary } from "cloudinary";
+import streamifier from "streamifier";
 
 export const cloudinaryUploadMiddleware = (folder = "default") => {
     return async (req, res, next) => {
         try {
-            if (!req.file || !req.file.path) {
-              req.img = "https://res.cloudinary.com/dibe6yrzf/image/upload/v1747668225/perfil-de-usuario_cxmmxq.png"; 
-              return next();            
+            if (!req.file && !req.body.img) {
+                req.img = "https://res.cloudinary.com/dibe6yrzf/image/upload/v1747668225/perfil-de-usuario_cxmmxq.png";
+                return next();
             }
 
-            const { secure_url } = await uploadImage(req.file, folder);
+            const uploadStream = cloudinary.uploader.upload_stream(
+                { folder },
+                (error, result) => {
+                    if (error) {
+                        return next(error);
+                    }
+                    req.img = result.secure_url;
+                    next();
+                }
+            );
 
-            fs.unlink(req.file.path, (err) => {
-                if (err) console.error("Error al eliminar archivo local:", err);
-            });
-
-            req.img = secure_url;
-            next();
+            if (req.file) {
+                streamifier.createReadStream(req.file.buffer).pipe(uploadStream);
+            } else if (req.body.img) {
+                streamifier.createReadStream(Buffer.from(req.body.img, "base64")).pipe(uploadStream);
+            }
         } catch (error) {
-        
             return next(error);
         }
     };
@@ -26,26 +33,31 @@ export const cloudinaryUploadMiddleware = (folder = "default") => {
 
 export const cloudinaryUploadMultiple = (folder = "default") => {
     return async (req, res, next) => {
-      try {
-        if (!req.files || req.files.length === 0) {
-          return res.status(400).json({ error: "No se recibieron imágenes" });
+        try {
+            if (!req.files || req.files.length === 0) {
+                req.imgs = [];
+                return next();
+            }
+
+            const uploadPromises = req.files.map((file) => {
+                return new Promise((resolve, reject) => {
+                    const uploadStream = cloudinary.uploader.upload_stream(
+                        { folder },
+                        (error, result) => {
+                            if (error) {
+                                return reject(error);
+                            }
+                            resolve(result.secure_url);
+                        }
+                    );
+                    streamifier.createReadStream(file.buffer).pipe(uploadStream);
+                });
+            });
+
+            req.imgs = await Promise.all(uploadPromises);
+            next();
+        } catch (error) {
+            return next(error);
         }
-  
-        const urls = [];
-  
-        for (const file of req.files) {
-          const { secure_url } = await uploadImage(file, folder);
-          urls.push(secure_url);
-  
-          fs.unlink(file.path, (err) => {
-            if (err) console.error("Error al eliminar archivo local:", err);
-          });
-        }
-  
-        req.imgs = urls;
-        next();
-      } catch (error) {
-        next(error);
-      }
     };
-  };
+};

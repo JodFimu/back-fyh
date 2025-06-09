@@ -34,6 +34,7 @@
     "nodejs-fyph-backend": "file:",
     "pdf-lib": "^1.17.1",
     "pdfkit": "^0.17.1",
+    "streamifier": "^0.1.1",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
   },
